@@ -17,9 +17,8 @@ import net.minecraft.text.Text;
 
 public class BrightnessListWidget extends ElementListWidget<BrightnessListWidget.BrightnessEntry> {
 
-   public BrightnessListWidget(MinecraftClient client, int i, int j, int k, int l, int m) {
-      super(client, i, j, k, l, m);
-      this.setRenderSelection(true);
+   public BrightnessListWidget(MinecraftClient client, int i, int j, int k, int l) {
+      super(client, i, j, k, l);
 
       if (client.options.getGamma().getValue() != BoostedBrightness.getBrightness()) {
          BoostedBrightness.changeBrightness(client.options.getGamma().getValue());
@@ -72,9 +71,9 @@ public class BrightnessListWidget extends ElementListWidget<BrightnessListWidget
       return 300;
    }
 
-   protected int getScrollbarPositionX() {
+   /*protected int getScrollbarPositionX() {
       return super.getScrollbarPositionX() + 32;
-   }
+   }*/
 
    public Optional<ClickableWidget> getHoveredButton(double mouseX, double mouseY) {
       Iterator<BrightnessEntry> var5 = this.children().iterator();
